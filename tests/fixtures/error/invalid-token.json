@@ -1,0 +1,6 @@
+{
+    "auth": false,
+    "status": 400,
+    "message": "Invalid/Missing token."
+
+}

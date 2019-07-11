@@ -1,0 +1,12 @@
+{
+    "firstName": "John",
+    "lastName": "Smith",
+    "password": "secretPW",
+    "email": "john.smith@example.com",
+    "phoneNumber": "1234567891",
+    "address": "100 E Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10000",
+    "country": "USA"
+}

@@ -1,0 +1,14 @@
+{
+    "_id": "5cf7e5ebbcbee42820ac3edb",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john.smith@example.com",
+    "phoneNumber": 1234567891,
+    "address": "100 E Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10000",
+    "country": "USA",
+    "__v": 0,
+    "token": "the token"
+}
