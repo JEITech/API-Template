@@ -2,24 +2,24 @@
     'use strict';
 
     module.exports = {
-        "addLinkhub": addLinkhub,
-        "getLinkhubs": getLinkhubs,
-        "getLinkhubById": getLinkhubById,
-        "modifyLinkhub": modifyLinkhub,
-        "removeLinkhub": removeLinkhub,
+        "add": add,
+        "getAll": getAll,
+        "getOneById": getOneById,
+        "modify": modify,
+        "remove": removeLinkhub,
         "auth": auth
     };
 
-    const linkhubService = require('./linkhub.service');
+    const service = require('./api.service');
 
     const jwt = require('jsonwebtoken');
     const bcrypt = require('bcryptjs');
     const config = require('../../config/auth/auth-config');
 
-    function addLinkhub(req, res, next){
+    function add(req, res, next){
         const hash = bcrypt.hashSync(req.body.password, 8);
         req.body.password = hash;
-        linkhubService.createLinkhub(req.body)
+        service.create(req.body)
             .then(success)
             .catch(failure);
         function success(data){
@@ -33,8 +33,8 @@
         }
     }
 
-    function getLinkhubs(req, res, next){
-        linkhubService.fetchLinkhubs()
+    function getAll(req, res, next){
+        service.fetchAll()
             .then(success)
             .catch(failure);
         function success(data){
@@ -46,8 +46,8 @@
         }
     }
 
-    function getLinkhubById(req, res, next){
-        linkhubService.fetchLinkhubById(req.body.linkhubId)
+    function getOneById(req, res, next){
+        service.fetchOneById(req.body.userId)
             .then(success)
             .catch(failure);
         function success(data){
@@ -62,9 +62,9 @@
         }
     }
 
-    function modifyLinkhub(req, res, next){
+    function modify(req, res, next){
         delete req.body['_id'];
-        linkhubService.updateLinkhub(req.body.linkhubId, req.body)
+        service.modify(req.body.userId, req.body)
             .then(success)
             .catch(failure);
         function success(data){
@@ -77,7 +77,7 @@
     }
     
     function removeLinkhub(req, res, next){
-        linkhubService.deleteLinkhub(req.body.linkhubId)
+        service.remove(req.body.userId)
             .then(success)
             .catch(failure);
         function success(data){
@@ -100,7 +100,7 @@
                     "message": "Invalid/Missing token."
                 });
             }else{
-                req.body.linkhubId = decoded.id;
+                req.body.userId = decoded.id;
                 next();
             }
         });

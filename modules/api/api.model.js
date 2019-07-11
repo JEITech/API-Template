@@ -6,7 +6,7 @@
     mongoose.set('useFindAndModify', false);
     const schema = mongoose.Schema;
     
-    let linkhubSchema = new schema({
+    let apiSchema = new schema({
         "firstName": {
             "type": String,
             "required": true
@@ -34,6 +34,6 @@
         "country": String
     });
 
-    module.exports = mongoose.model('linkhubs', linkhubSchema);
+    module.exports = mongoose.model('api', apiSchema);
 
 })();

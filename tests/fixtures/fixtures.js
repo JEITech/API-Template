@@ -2,7 +2,7 @@
     'use strict';
 
     module.exports = {
-        linkhubFixture: require('./linkhub/linkhub-fixture'),
+        apiFixture: require('./api/api-fixture'),
         errorFixture: require('./error/error-fixture')
     };
 

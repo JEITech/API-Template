@@ -1,5 +1,5 @@
 {
-  "name": "shopify-linkhub",
+  "name": "api-skeleton",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
     "bluebird": "^3.5.5",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dot-env": "0.0.1",
+    "dotenv": "^8.0.0",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",

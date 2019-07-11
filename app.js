@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const mongodbUtil = require('./modules/mongodb/mongodb.module').mongodbUtil;
-const linkhubController = require('./modules/linkhub/linkhub.module')().linkhubController;
+const apiController = require('./modules/api/api.module')().controller;
 
 
 const app = express();
@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 mongodbUtil.init();
 
-app.use('/linkhubs', linkhubController);
+app.use('/api', apiController);
 
 app.get('/', function (req, res) {
   const pkg = require(path.join(__dirname, 'package.json'));
