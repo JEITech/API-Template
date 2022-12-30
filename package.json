@@ -23,7 +23,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "mockgoose-fix": "^7.3.6",
     "node-mocks-http": "^1.7.5",
     "sinon": "^7.3.2",
